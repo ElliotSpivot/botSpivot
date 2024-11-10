@@ -176,7 +176,7 @@ const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['Kakaroto-Bot-MD', 'Edge', '20.0.04'] : methodCodeQR ? ['Kakaroto-Bot-MD', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
+browser: opcion == '1' ? ['Spivot-Bot-MD', 'Edge', '20.0.04'] : methodCodeQR ? ['Spivot-Bot-MD', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -280,7 +280,7 @@ process.on('uncaughtException', console.error);
 async function connectSubBots() {
 const subBotDirectory = './GokuJadiBot';
 if (!existsSync(subBotDirectory)) {
-console.log('🚩 kakaroto-Bot no tiene Sub-Bots vinculados.');
+console.log('🚩 Spivot-Bot no tiene Sub-Bots vinculados.');
 return;
 }
 
@@ -307,11 +307,11 @@ const mainBotAuthFile = 'GokuSession';
 try {
 const mainBot = await connectionUpdate(mainBotAuthFile);
 global.conns.push(mainBot);
-console.log(chalk.bold.greenBright(`🚩 Ai Kakaroto conectado correctamente.`))
+console.log(chalk.bold.greenBright(`🚩 Ai Spivot conectado correctamente.`))
 
 await connectSubBots();
 } catch (error) {
-console.error(chalk.bold.cyanBright(`🍭 Error al iniciar Kakaroto-Bot: `, error))
+console.error(chalk.bold.cyanBright(`🍭 Error al iniciar Spivot-Bot: `, error))
 }
 })();
 
